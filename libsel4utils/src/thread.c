@@ -99,7 +99,7 @@ int sel4utils_configure_thread_config(vka_t *vka, vspace_t *parent, vspace_t *al
         res->sched_context.cptr = config.sched_params.sched_context;
     }
     seL4_Word null_cap_data = seL4_NilData;
-    error = api_tcb_configure(res->tcb.cptr, config.fault_endpoint,
+    error = api_tcb_configure(res->tcb.cptr, config.fault_endpoint, null_cap_data,
                               seL4_CapNull,
                               res->sched_context.cptr,
                               config.cspace,
